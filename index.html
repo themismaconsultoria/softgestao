@@ -1,732 +1,258 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SoftGestão - Sistemas Sob Medida, Sites de Alta Performance e LegalTech</title>
-<meta name="description" content="Desenvolvemos sistemas de gestão sob medida, sites de alta conversão e programas LegalTech para escritórios de advocacia. Deploy ágil, código próprio, suporte via WhatsApp.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.softgestao.com.br/">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="SoftGestão - Sistemas Sob Medida e LegalTech para Advocacia">
-<meta property="og:description" content="Software de gestão, sites de alta conversão e soluções LegalTech para escritórios de advocacia. Resposta garantida em menos de 24 horas.">
-<meta property="og:locale" content="pt_BR">
-<!-- Preconnect para acelerar CDNs externos -->
-<link rel="preconnect" href="https://cdn.tailwindcss.com">
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
-<!-- Tailwind CSS para estilização rápida e moderna -->
-<script src="https://cdn.tailwindcss.com"></script>
-<!-- FontAwesome para ícones -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- Dados estruturados para SEO / Machine Experience -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "SoftGestão",
-  "description": "Desenvolvimento de sistemas de gestão sob medida, sites de alta conversão e programas LegalTech para escritórios de advocacia.",
-  "telephone": "+5511977278197",
-  "email": "comercial.softgestao@gmail.com",
-  "areaServed": "BR",
-  "address": {
-    "@type": "PostalAddress",
-    "addressRegion": "SP",
-    "addressCountry": "BR"
-  },
-  "sameAs": [
-    "https://www.instagram.com/soft.gestao.desenvolvimento"
-  ],
-  "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Programas LegalTech para Escritórios de Advocacia" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Criação de Sites de Alta Conversão" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sistemas de Gestão Empresarial Sob Medida" } }
-  ]
-}
-</script>
-<style>
-/* Estilos personalizados para Alta Conversão */
-.hero-bg {
-  background: linear-gradient(rgba(10, 20, 50, 0.85), rgba(30, 58, 138, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-}
-.smooth-scroll { scroll-behavior: smooth; }
-@keyframes pulse-custom {
-  0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-}
-/* Alerta piscante para a promoção */
-@keyframes flash-promo {
-  0%, 100% { background-color: #1d4ed8; }
-  50% { background-color: #1e40af; }
-}
-.animate-flash { animation: flash-promo 2s infinite ease-in-out; }
-.whatsapp-btn { animation: pulse-custom 2s infinite; }
-.card-hover { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-.card-hover:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
-/* FAQ interativo */
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-.faq-item.active .faq-answer { max-height: 250px; padding-top: 1rem; }
-.faq-item.active .faq-icon { transform: rotate(180deg); }
-/* Notificação de Prova Social */
-@keyframes slide-in-up {
-  from { transform: translateY(100%); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-.social-proof-toast { animation: slide-in-up 0.5s ease-out forwards; }
-/* Modal de Saída */
-#exit-popup { display: none; }
-/* Botão de Filtro Ativo */
-.filter-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; }
-/* Foco visível para acessibilidade de teclado */
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
-  outline: 3px solid #f97316;
-  outline-offset: 2px;
-}
-</style>
-</head>
-<body class="font-sans text-gray-800 antialiased smooth-scroll bg-slate-50">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoftGestão - Sistemas Sob Medida e LegalTech</title>
+  <meta name="description" content="A SoftGestão desenvolve sistemas sob medida, sites de alta conversão e programas LegalTech para escritórios de advocacia.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.softgestao.com.br/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SoftGestão - Sistemas Sob Medida e LegalTech">
+  <meta property="og:description" content="Sistemas sob medida, automação inteligente e programas LegalTech para escritórios de advocacia.">
+  <meta property="og:locale" content="pt_BR">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- Alerta de Promoção Mensal com Cronômetro -->
-<div class="animate-flash text-white text-center py-2.5 px-4 text-xs md:text-sm font-black uppercase tracking-widest sticky top-0 z-60 shadow-lg flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 text-center" role="status">
-  <span><i class="fa-solid fa-gift mr-2 animate-bounce" aria-hidden="true"></i>Oferta Especial: Ao contratar seu sistema este mês, você garante consultoria estratégica e checklist personalizado sem custo!</span>
-  <div class="bg-white/20 px-3 py-1 rounded-lg border border-white/30 font-mono text-sm" id="promo-timer">Expira em 00:00:00:00</div>
-</div>
-
-<!-- Notificação de Leads Recentes -->
-<div id="social-proof" class="fixed bottom-24 left-6 z-100 hidden md:flex bg-white p-4 rounded-2xl shadow-2xl border border-slate-100 items-center gap-4 max-w-xs transition-all duration-500 opacity-0 transform translate-y-10" role="status" aria-live="polite">
-  <div class="bg-blue-100 p-3 rounded-full text-blue-600"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
-  <div class="text-xs">
-    <p class="font-black text-slate-900" id="sp-text">Novo lead gerado!</p>
-    <p class="text-slate-500" id="sp-time">há 2 minutos em São Paulo/SP</p>
-  </div>
-</div>
-
-<!-- Navegação -->
-<nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all duration-300 top-0" aria-label="Navegação principal">
-<script>
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
-  const promo = document.querySelector('.animate-flash');
-  if (window.scrollY > promo.offsetHeight) { nav.style.top = '0'; }
-  else { nav.style.top = promo.offsetHeight + 'px'; }
-});
-document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.querySelector('nav');
-  const promo = document.querySelector('.animate-flash');
-  nav.style.top = promo.offsetHeight + 'px';
-});
-</script>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="flex justify-between h-20 items-center">
-    <div class="flex-shrink-0 flex items-center group cursor-pointer">
-      <div class="bg-blue-600 group-hover:bg-blue-700 text-white p-2 rounded-xl mr-3 transition-colors shadow-lg shadow-blue-200"><i class="fa-solid fa-layer-group fa-lg" aria-hidden="true"></i></div>
-      <span class="font-black text-2xl text-blue-900 tracking-tighter uppercase">SoftGestão</span>
-    </div>
-    <div class="hidden md:flex items-center space-x-10">
-      <a href="#inicio" class="text-slate-600 hover:text-blue-600 font-semibold transition">Início</a>
-      <a href="#solucoes" class="text-slate-600 hover:text-blue-600 font-semibold transition">Soluções</a>
-      <a href="#personalizado" class="text-blue-600 hover:text-blue-800 font-bold transition">Sob Medida</a>
-      <a href="#contato" class="bg-blue-600 text-white px-7 py-3 rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200 active:scale-95 text-center">Quero Minha Proposta</a>
-    </div>
-    <div class="md:hidden flex items-center">
-      <button onclick="toggleMenu()" class="text-blue-900 focus:outline-none" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars-staggered fa-2x" aria-hidden="true"></i></button>
-    </div>
-  </div>
-</div>
-<!-- Menu Mobile -->
-<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 animate-in slide-in-from-top text-center">
-  <a href="#inicio" onclick="toggleMenu()" class="block py-4 px-6 font-semibold hover:bg-slate-50 transition border-b">Início</a>
-  <a href="#solucoes" onclick="toggleMenu()" class="block py-4 px-6 font-semibold hover:bg-slate-50 transition border-b">Soluções</a>
-  <a href="#personalizado" onclick="toggleMenu()" class="block py-4 px-6 font-bold text-blue-600 hover:bg-slate-50 transition border-b">Sob Medida</a>
-  <a href="#contato" onclick="toggleMenu()" class="block py-4 px-6 font-bold text-blue-600 hover:bg-slate-50 transition">Quero Minha Proposta</a>
-</div>
-</nav>
-
-<main>
-<!-- Seção Hero -->
-<section id="inicio" class="hero-bg min-h-screen flex items-center justify-center pt-32 px-4 text-center">
-  <div class="text-center max-w-5xl mx-auto">
-    <div class="inline-block bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 text-blue-300 px-4 py-1.5 rounded-full text-sm font-bold mb-8 animate-pulse uppercase tracking-widest text-center">Vagas limitadas para projetos este mês</div>
-    <h1 class="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tight text-center">Sistemas que Transformam <br><span class="text-blue-400">Tempo em Lucro.</span><br>
-      <span class="block text-2xl md:text-4xl mt-4 opacity-90 font-bold text-slate-100">Reduza em até <span class="text-orange-400">40% seus custos</span><br>com Automação Inteligente.</span>
-    </h1>
-    <p class="text-lg md:text-2xl text-slate-200 mb-12 max-w-3xl mx-auto leading-relaxed font-medium text-center">Do software de gestão inteligente ao site que vende sozinho. Criamos a infraestrutura digital que coloca sua empresa à frente da concorrência — inclusive soluções LegalTech desenvolvidas especialmente para escritórios de advocacia.</p>
-    <div class="flex flex-col sm:flex-row justify-center gap-6 text-center">
-      <a href="#contato" class="bg-orange-500 hover:bg-orange-600 text-white font-black py-5 px-12 rounded-2xl text-xl transition shadow-2xl hover:scale-105 active:scale-95 shadow-orange-500/40 text-center">Quero Minha Consultoria Gratuita</a>
-      <a href="#solucoes" class="bg-white/10 backdrop-blur-md border-2 border-white/40 hover:bg-white hover:text-blue-900 text-white font-bold py-5 px-12 rounded-2xl text-xl transition text-center">Ver Soluções</a>
-    </div>
-    <p class="text-slate-400 mt-6 text-sm font-semibold italic text-center">Resposta garantida em menos de 24 horas. Sem compromisso.</p>
-  </div>
-</section>
-
-<!-- Números e Confiança -->
-<div class="bg-white py-16 border-b border-slate-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center mb-16">
-      <div class="space-y-2"><p class="text-5xl font-black text-blue-600 tracking-tighter">+150</p><p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Projetos Ativos</p></div>
-      <div class="space-y-2"><p class="text-5xl font-black text-blue-600 tracking-tighter">100%</p><p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Código Próprio</p></div>
-      <div class="space-y-2"><p class="text-5xl font-black text-blue-600 tracking-tighter">+12k</p><p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Horas Manuais Economizadas</p></div>
-      <div class="space-y-2"><p class="text-5xl font-black text-blue-600 tracking-tighter">72h</p><p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Setup Inicial</p></div>
-    </div>
-    <div class="pt-8 border-t border-slate-50">
-      <p class="text-center text-slate-400 text-xs font-black uppercase tracking-[0.3em] mb-8">Tecnologias de Classe Mundial</p>
-      <div class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-500 text-center" aria-hidden="true">
-        <i class="fa-brands fa-aws fa-3x"></i>
-        <i class="fa-brands fa-google fa-3x"></i>
-        <i class="fa-brands fa-node-js fa-3x"></i>
-        <i class="fa-brands fa-react fa-3x"></i>
-        <i class="fa-brands fa-docker fa-3x"></i>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Seção de Soluções com Filtros -->
-<section id="solucoes" class="py-28 bg-slate-50 text-center">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-6xl font-black text-blue-900 mb-6 tracking-tight">Soluções que Escalam Negócios</h2>
-      <div class="w-24 h-2 bg-blue-600 mx-auto rounded-full mb-8"></div>
-      <!-- Filtros -->
-      <div class="flex flex-wrap justify-center gap-4 mt-12 mb-16 text-center" role="group" aria-label="Filtrar soluções por categoria">
-        <button onclick="filterSolucoes('todos')" class="filter-btn active px-6 py-2 rounded-full border-2 border-slate-200 font-bold transition hover:border-blue-600">Todos</button>
-        <button onclick="filterSolucoes('gestao')" class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 font-bold transition hover:border-blue-600">Gestão Empresarial</button>
-        <button onclick="filterSolucoes('legaltech')" class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 font-bold transition hover:border-blue-600">LegalTech</button>
-        <button onclick="filterSolucoes('vendas')" class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 font-bold transition hover:border-blue-600">Vendas &amp; Sites</button>
-        <button onclick="filterSolucoes('bem-estar')" class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 font-bold transition hover:border-blue-600">Saúde &amp; Bem-Estar</button>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="solucoes-grid">
-
-      <!-- Web Sites -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover relative group text-left" data-cat="vendas">
-        <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-black px-4 py-1 rounded-bl-2xl uppercase tracking-widest">Foco em Vendas</div>
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-inner"><i class="fa-solid fa-globe fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Criação de Web Sites</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Landing pages de alta conversão e lojas online otimizadas.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero meu site <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- LegalTech para Advocacia -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border-2 border-blue-500 card-hover relative group text-left" data-cat="legaltech">
-        <div class="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-black px-4 py-1 rounded-bl-2xl uppercase tracking-widest">Novo</div>
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-inner"><i class="fa-solid fa-gavel fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Programas LegalTech</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Sistemas sob medida para escritórios de advocacia: análise de processos com IA, automação de peças, controle de prazos e agenda jurídica inteligente.</p>
-        <a href="https://wa.me/5511977278197?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20no%20programa%20LegalTech%20para%20escrit%C3%B3rios%20de%20advocacia.%20Pode%20me%20passar%20mais%20detalhes%3F" target="_blank" rel="noopener" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero conhecer a solução jurídica <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Condomínios -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-building fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Gestão de Condomínios</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Controle financeiro automatizado e comunicação digital ativa.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero modernizar meu condomínio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Automóveis -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-car fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Stands de Automóveis</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Gestão de estoque inteligente e CRM de vendas integrado.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero gerir meu estoque <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Estacionamentos -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-square-parking fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Estacionamentos</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Controle de entradas/saídas por placa e tarifação dinâmica.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero otimizar meu estacionamento <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Lava Rápido -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-soap fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Lava Rápido</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Fila de lavagem em tempo real e comissões automáticas.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero gerir meu lava jato <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Imobiliárias -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="vendas">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-house-chimney fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Imobiliárias</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Catálogo digital de alta performance e gestão de contratos.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero listar meus imóveis <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Advocacia -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="legaltech">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-scale-balanced fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Advocacia</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Acompanhamento de processos e agenda jurídica inteligente.</p>
-        <a href="https://wa.me/5511977278197?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20em%20um%20sistema%20de%20acompanhamento%20de%20processos%20e%20agenda%20jur%C3%ADdica%20para%20meu%20escrit%C3%B3rio.%20Pode%20me%20passar%20mais%20detalhes%3F" target="_blank" rel="noopener" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero gerir meus processos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Saúde -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="bem-estar">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-user-doctor fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Saúde e Clínicas</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Prontuário eletrônico seguro e agendamento online.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero cuidar da minha clínica <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Estética -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="bem-estar">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-spa fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Salões e Estética</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Agendamentos via WhatsApp e controle de comissões.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero organizar meu studio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- PetShop -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="bem-estar">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-paw fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Pet Shops</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Histórico clínico animal e agendamento de banho/tosa.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero gerir meu pet shop <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Alimentação -->
-      <div class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao">
-        <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300"><i class="fa-solid fa-utensils fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-blue-900">Alimentação</h3>
-        <p class="text-slate-600 text-sm leading-relaxed mb-6">Controle de mesas, PDV ágil e delivery integrado.</p>
-        <a href="#contato" class="text-blue-600 font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero gerir meu restaurante <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-      <!-- Pessoal -->
-      <div class="solucao-card bg-blue-600 p-8 rounded-3xl shadow-xl border border-blue-400 card-hover group text-left" data-cat="gestao">
-        <div class="text-white mb-6 bg-blue-500 w-16 h-16 flex items-center justify-center rounded-2xl group-hover:bg-white group-hover:text-blue-600 transition-all duration-300"><i class="fa-solid fa-house-user fa-2x" aria-hidden="true"></i></div>
-        <h3 class="text-xl font-bold mb-3 text-white">Controle Pessoal</h3>
-        <p class="text-blue-100 text-sm leading-relaxed mb-6">Gestão de gastos familiares e planejamento doméstico.</p>
-        <a href="#contato" class="text-white font-black text-sm uppercase flex items-center gap-2 hover:gap-4 transition-all">Quero controlar meus gastos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- Diferencial Sob Medida -->
-<section id="personalizado" class="py-28 bg-blue-900 text-white relative overflow-hidden">
-  <div class="absolute inset-0 opacity-5 pointer-events-none text-center" aria-hidden="true">
-    <svg width="100%" height="100%" fill="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="200" cy="200" r="100" stroke="white" stroke-width="2"/>
-      <circle cx="200" cy="200" r="150" stroke="white" stroke-width="2"/>
-    </svg>
-  </div>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-    <div class="mb-24">
-      <span class="bg-blue-600 text-white text-xs font-black px-5 py-2 rounded-full uppercase tracking-widest border border-blue-500 shadow-lg">Metodologia Ágil</span>
-      <h2 class="text-4xl md:text-6xl font-black mt-8 mb-6 leading-tight tracking-tighter">Software de Verdade, <br>Sem Complicação.</h2>
-      <p class="text-blue-200 text-xl max-w-2xl mx-auto leading-relaxed">Desenvolvemos o sistema que sua empresa realmente precisa, sem taxas escondidas.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-      <div class="bg-white/5 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition group text-center md:text-left">
-        <div class="bg-white text-blue-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-3xl font-black shadow-xl group-hover:scale-110 transition duration-300 mx-auto md:mx-0" aria-hidden="true">1</div>
-        <h3 class="text-2xl font-bold mb-4">Análise Estratégica</h3>
-        <p class="text-blue-100/70 leading-relaxed font-medium">Mapeamos seus gargalos operacionais para eliminá-los.</p>
-      </div>
-      <div class="bg-white/5 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition group text-center md:text-left">
-        <div class="bg-white text-blue-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-3xl font-black shadow-xl group-hover:scale-110 transition duration-300 mx-auto md:mx-0" aria-hidden="true">2</div>
-        <h3 class="text-2xl font-bold mb-4">Arquitetura UI/UX</h3>
-        <p class="text-blue-100/70 leading-relaxed font-medium">Interfaces intuitivas que não exigem manuais complexos.</p>
-      </div>
-      <div class="bg-blue-600 p-10 rounded-[2.5rem] border border-blue-400 shadow-[0_20px_50px_rgba(37,99,235,0.4)] transition group relative text-center md:text-left">
-        <div class="bg-white text-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-3xl font-black shadow-xl group-hover:scale-110 transition duration-300 mx-auto md:mx-0" aria-hidden="true">3</div>
-        <h3 class="text-2xl font-bold mb-4 text-white">Deploy em Dias</h3>
-        <p class="text-white leading-relaxed font-bold">Lançamento agilizado para colher lucros imediatamente.</p>
-      </div>
-    </div>
-    <div class="mt-20">
-      <a href="#contato" class="inline-block bg-white text-blue-900 font-black py-6 px-16 rounded-3xl hover:bg-slate-100 transition shadow-2xl text-xl transform hover:-translate-y-1 active:scale-95 shadow-white/10 text-center">Quero Meu Sistema Exclusivo Agora</a>
-    </div>
-  </div>
-</section>
-
-<!-- Calculadora de ROI -->
-<section class="py-28 bg-white text-center">
-  <div class="max-w-4xl mx-auto px-4">
-    <h2 class="text-4xl font-black text-slate-900 mb-6 tracking-tight">Quanto você está perdendo hoje?</h2>
-    <p class="text-slate-500 mb-12 text-lg">Calcule quanto tempo e dinheiro sua empresa economizaria com automação.</p>
-    <div class="bg-slate-50 p-10 rounded-[2.5rem] border-2 border-dashed border-slate-200">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 text-left">
-        <div>
-          <label for="roi-hours" class="block text-xs font-black uppercase text-slate-400 mb-3 tracking-widest">Horas gastas em tarefas manuais (por mês)</label>
-          <input type="number" id="roi-hours" value="40" class="w-full px-6 py-4 rounded-xl border-2 border-slate-100 outline-none focus:border-blue-500 font-bold">
-        </div>
-        <div>
-          <label for="roi-cost" class="block text-xs font-black uppercase text-slate-400 mb-3 tracking-widest">Custo médio da hora de trabalho (R$)</label>
-          <input type="number" id="roi-cost" value="50" class="w-full px-6 py-4 rounded-xl border-2 border-slate-100 outline-none focus:border-blue-500 font-bold">
-        </div>
-      </div>
-      <button onclick="calculateROI()" class="bg-blue-600 text-white font-black py-4 px-10 rounded-xl hover:bg-blue-700 transition mb-10">Calcular Minha Economia</button>
-      <div id="roi-result" class="hidden" aria-live="polite">
-        <p class="text-slate-500 font-bold uppercase text-xs tracking-[0.2em] mb-2">Economia estimada por ano:</p>
-        <p class="text-5xl font-black text-green-600 mb-8" id="roi-value">R$ 0,00</p>
-        <a href="#contato" class="bg-orange-500 text-white font-black py-4 px-8 rounded-xl hover:bg-orange-600 transition shadow-lg text-center">Quero Economizar Este Valor</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Prova Social Centralizada -->
-<section id="beneficios" class="py-28 bg-slate-50 overflow-hidden text-center">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col items-center gap-16">
-      <div class="w-full max-w-4xl relative mx-auto">
-        <div class="absolute -inset-10 bg-blue-600/10 rounded-full blur-[100px]" aria-hidden="true"></div>
-        <div class="relative rounded-[2.5rem] shadow-[0_60px_100px_-20px_rgba(0,0,0,0.25)] overflow-hidden border border-slate-200 bg-white">
-          <div class="bg-slate-100 px-8 py-5 flex items-center gap-5 border-b border-slate-200">
-            <div class="flex gap-2" aria-hidden="true">
-              <div class="w-3.5 h-3.5 rounded-full bg-red-400"></div>
-              <div class="w-3.5 h-3.5 rounded-full bg-yellow-400"></div>
-              <div class="w-3.5 h-3.5 rounded-full bg-green-400"></div>
-            </div>
-            <div class="flex-1 bg-white rounded-xl border border-slate-200 py-2 px-5 text-[11px] text-slate-400 font-mono tracking-tight flex justify-between items-center text-left">
-              <span>softgestao.com.br/painel-administrativo</span>
-              <i class="fa-solid fa-lock text-green-500 opacity-60" aria-hidden="true"></i>
-            </div>
-          </div>
-          <div class="min-h-[350px] md:min-h-[450px] bg-white relative">
-            <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=2070&auto=format&fit=crop" alt="Painel de sistema de gestão SoftGestão exibido em notebook, ilustrando dashboard administrativo" width="2070" height="1380" loading="lazy" decoding="async" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-blue-900/10" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
-      <div class="w-full max-w-4xl mx-auto">
-        <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight text-center">Presença Digital <br>que <span class="text-blue-600">Converte</span></h2>
-        <p class="text-xl text-slate-600 mb-16 leading-relaxed font-medium text-center">Unimos a inteligência do código à psicologia do design para criar máquinas de vendas automáticas.</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-          <div class="flex flex-col items-center md:items-start gap-6 group">
-            <div class="bg-blue-600 text-white p-5 rounded-[1.25rem] shadow-xl shadow-blue-200 group-hover:rotate-6 transition duration-300"><i class="fa-solid fa-bolt-lightning text-2xl" aria-hidden="true"></i></div>
-            <div class="text-center md:text-left">
-              <h4 class="text-xl font-bold text-slate-900 mb-2">Velocidade Crítica</h4>
-              <p class="text-slate-500 leading-relaxed text-sm md:text-base">Sites otimizados abaixo de 1 segundo.</p>
-            </div>
-          </div>
-          <div class="flex flex-col items-center md:items-start gap-6 group">
-            <div class="bg-green-600 text-white p-5 rounded-[1.25rem] shadow-xl shadow-green-200 group-hover:rotate-6 transition duration-300"><i class="fa-solid fa-chart-line text-2xl" aria-hidden="true"></i></div>
-            <div class="text-center md:text-left">
-              <h4 class="text-xl font-bold text-slate-900 mb-2">SEO Dominante</h4>
-              <p class="text-slate-500 leading-relaxed text-sm md:text-base">Apareça nas primeiras posições do Google.</p>
-            </div>
-          </div>
-          <div class="flex flex-col items-center md:items-start gap-6 group">
-            <div class="bg-slate-900 text-white p-5 rounded-[1.25rem] shadow-xl shadow-slate-300 group-hover:rotate-6 transition duration-300"><i class="fa-solid fa-shield-halved text-2xl" aria-hidden="true"></i></div>
-            <div class="text-center md:text-left">
-              <h4 class="text-xl font-bold text-slate-900 mb-2">Segurança Bancária</h4>
-              <p class="text-slate-500 leading-relaxed text-sm md:text-base">Proteção total para seus dados e transações.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Depoimentos -->
-<section class="py-28 bg-white border-y border-slate-200/60 text-center">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-20">
-      <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tighter text-center">O que dizem sobre nós</h2>
-      <p class="text-slate-500 text-xl font-medium tracking-tight text-center">O sucesso dos nossos clientes é nossa maior propaganda.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
-      <div class="bg-slate-50 p-10 rounded-[2.5rem] shadow-sm border border-slate-200/60 flex flex-col hover:shadow-xl transition-shadow text-left">
-        <div class="flex text-yellow-400 mb-6 text-xl" aria-label="Avaliação 5 de 5 estrelas"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
-        <p class="text-slate-600 italic mb-10 flex-1 leading-relaxed">"O sistema para meu Pet Shop mudou tudo. Hoje controlo estoque e banhos de forma 100% digital."</p>
-        <div class="flex items-center gap-5 border-t border-slate-200 pt-8 text-left">
-          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-black text-xl" aria-hidden="true">RM</div>
-          <div><p class="font-black text-slate-900">Ricardo Mendes</p><p class="text-slate-500 text-xs font-black uppercase tracking-widest">Pet Shop</p></div>
-        </div>
-      </div>
-      <div class="bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-blue-500 flex flex-col lg:scale-105 z-10 relative text-left">
-        <div class="absolute -top-4 left-12 -translate-x-12 bg-blue-600 text-white text-[10px] font-black px-6 py-1 rounded-full uppercase tracking-[0.2em]">Destaque</div>
-        <div class="flex text-yellow-400 mb-6 text-xl" aria-label="Avaliação 5 de 5 estrelas"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
-        <p class="text-slate-700 italic mb-10 flex-1 leading-relaxed font-medium">"Precisava de um site imobiliário que fosse rápido. Em 5 dias estava no ar e os contatos dobraram."</p>
-        <div class="flex items-center gap-5 border-t border-slate-200 pt-8 text-left">
-          <div class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center text-white font-black text-xl shadow-lg" aria-hidden="true">AL</div>
-          <div><p class="font-black text-slate-900 text-lg">Ana Lúcia</p><p class="text-slate-500 text-xs font-black uppercase tracking-widest">Corretora</p></div>
-        </div>
-      </div>
-      <div class="bg-slate-50 p-10 rounded-[2.5rem] shadow-sm border border-slate-200/60 flex flex-col hover:shadow-xl transition-shadow text-left">
-        <div class="flex text-yellow-400 mb-6 text-xl" aria-label="Avaliação 5 de 5 estrelas"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
-        <p class="text-slate-600 italic mb-10 flex-1 leading-relaxed">"O controle de condomínios é fantástico. Tudo transparente para os moradores e fácil para o síndico."</p>
-        <div class="flex items-center gap-5 border-t border-slate-200 pt-8 text-left">
-          <div class="w-14 h-14 bg-slate-900 rounded-full flex items-center justify-center text-white font-black text-xl" aria-hidden="true">FC</div>
-          <div><p class="font-black text-slate-900">Felipe Castro</p><p class="text-slate-500 text-xs font-black uppercase tracking-widest">Síndico Profissional</p></div>
-        </div>
-      </div>
-      <div class="bg-slate-50 p-10 rounded-[2.5rem] shadow-sm border border-slate-200/60 flex flex-col hover:shadow-xl transition-shadow text-left">
-        <div class="flex text-yellow-400 mb-6 text-xl" aria-label="Avaliação 5 de 5 estrelas"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
-        <p class="text-slate-600 italic mb-10 flex-1 leading-relaxed">"O sistema jurídico automatizou meus prazos. O financeiro é impecável."</p>
-        <div class="flex items-center gap-5 border-t border-slate-200 pt-8 text-left">
-          <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-black text-xl" aria-hidden="true">DR</div>
-          <div><p class="font-black text-slate-900">Dr. André Silva</p><p class="text-slate-500 text-xs font-black uppercase tracking-widest">Advogado</p></div>
-        </div>
-      </div>
-      <div class="bg-slate-50 p-10 rounded-[2.5rem] shadow-sm border border-slate-200/60 flex flex-col hover:shadow-xl transition-shadow text-left">
-        <div class="flex text-yellow-400 mb-6 text-xl" aria-label="Avaliação 5 de 5 estrelas"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
-        <p class="text-slate-600 italic mb-10 flex-1 leading-relaxed">"Os agendamentos pelo WhatsApp direto no sistema do salão facilitaram muito."</p>
-        <div class="flex items-center gap-5 border-t border-slate-200 pt-8 text-left">
-          <div class="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center text-pink-600 font-black text-xl" aria-hidden="true">CS</div>
-          <div><p class="font-black text-slate-900 text-left">Carla Soares</p><p class="text-slate-500 text-xs font-black uppercase tracking-widest text-left">Studio Beauty</p></div>
-        </div>
-      </div>
-      <div class="bg-slate-50 p-10 rounded-[2.5rem] shadow-sm border border-slate-200/60 flex flex-col hover:shadow-xl transition-shadow text-left">
-        <div class="flex text-yellow-400 mb-6 text-xl" aria-label="Avaliação 5 de 5 estrelas"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
-        <p class="text-slate-600 italic mb-10 flex-1 leading-relaxed">"Controle de entrada e saída por placa no estacionamento agilizou tudo."</p>
-        <div class="flex items-center gap-5 border-t border-slate-200 pt-8 text-left">
-          <div class="w-14 h-14 bg-slate-900 rounded-full flex items-center justify-center text-white font-black text-xl" aria-hidden="true">MP</div>
-          <div><p class="font-black text-slate-900 text-left">Marcos Paulo</p><p class="text-slate-500 text-xs font-black uppercase tracking-widest text-left">Park Manager</p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Tira-Dúvidas -->
-<section class="py-28 bg-white text-center">
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-20">
-      <h2 class="text-4xl font-black text-slate-900 mb-4 tracking-tighter text-center">Tira-Dúvidas</h2>
-      <p class="text-slate-500 text-lg font-medium text-center">Tudo o que você precisa saber.</p>
-    </div>
-    <div class="space-y-6 text-left">
-      <div class="faq-item border border-slate-200 rounded-3xl p-8 hover:bg-slate-50 transition cursor-pointer group" onclick="toggleFaq(this)">
-        <div class="flex justify-between items-center"><h4 class="text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Quanto tempo demora?</h4><div class="faq-icon transition-transform duration-300 text-blue-600"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></div></div>
-        <div class="faq-answer text-slate-600 mt-4 text-sm md:text-base">Sites em 3-7 dias. Sistemas variam, mas entregamos módulos iniciais rapidamente.</div>
-      </div>
-      <div class="faq-item border border-slate-200 rounded-3xl p-8 hover:bg-slate-50 transition cursor-pointer group" onclick="toggleFaq(this)">
-        <div class="flex justify-between items-center"><h4 class="text-lg font-black text-slate-900 group-hover:text-blue-600 transition">O software será meu?</h4><div class="faq-icon transition-transform duration-300 text-blue-600"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></div></div>
-        <div class="faq-answer text-slate-600 mt-4 text-sm md:text-base">Sim! O código pertence ao cliente após a conclusão, sem aluguel.</div>
-      </div>
-      <div class="faq-item border border-slate-200 rounded-3xl p-8 hover:bg-slate-50 transition cursor-pointer group" onclick="toggleFaq(this)">
-        <div class="flex justify-between items-center"><h4 class="text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Como funciona o pagamento?</h4><div class="faq-icon transition-transform duration-300 text-blue-600"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></div></div>
-        <div class="faq-answer text-slate-600 mt-4 text-sm md:text-base">Entrada facilitada e parcelamento via cartão ou Pix por etapas.</div>
-      </div>
-      <div class="faq-item border border-slate-200 rounded-3xl p-8 hover:bg-slate-50 transition cursor-pointer group" onclick="toggleFaq(this)">
-        <div class="flex justify-between items-center"><h4 class="text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Integra com WhatsApp?</h4><div class="faq-icon transition-transform duration-300 text-blue-600"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></div></div>
-        <div class="faq-answer text-slate-600 mt-4 text-sm md:text-base text-left">Sim. Integramos via API com WhatsApp, pagamentos e outros ERPs.</div>
-      </div>
-      <div class="faq-item border border-slate-200 rounded-3xl p-8 hover:bg-slate-50 transition cursor-pointer group" onclick="toggleFaq(this)">
-        <div class="flex justify-between items-center"><h4 class="text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Fazem sistemas para escritórios de advocacia?</h4><div class="faq-icon transition-transform duration-300 text-blue-600"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></div></div>
-        <div class="faq-answer text-slate-600 mt-4 text-sm md:text-base text-left">Sim! Temos programas LegalTech desenvolvidos especificamente para escritórios de advocacia, com análise jurídica assistida por IA, automação de peças processuais, controle de prazos e agenda inteligente.</div>
-      </div>
-      <div class="faq-item border border-slate-200 rounded-3xl p-8 hover:bg-slate-50 transition cursor-pointer group" onclick="toggleFaq(this)">
-        <div class="flex justify-between items-center"><h4 class="text-lg font-black text-slate-900 group-hover:text-blue-600 transition">Hospedagem inclusa?</h4><div class="faq-icon transition-transform duration-300 text-blue-600"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></div></div>
-        <div class="faq-answer text-slate-600 mt-4 text-sm md:text-base text-left">Cuidamos da infraestrutura inicial e oferecemos suporte para nuvem AWS/Google.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contato -->
-<section id="contato" class="py-28 bg-slate-900 text-center">
-  <div class="max-w-4xl mx-auto px-4">
-    <div class="bg-white rounded-[3rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden relative border border-white/10 text-center">
-      <div class="bg-blue-600 p-16 text-white relative text-center">
-        <div class="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" aria-hidden="true"></div>
-        <h2 class="text-4xl md:text-5xl font-black mb-6 tracking-tight leading-tight text-center">Inicie Sua Nova Fase Digital</h2>
-        <p class="text-blue-100 text-xl opacity-90 font-medium text-center">Ganhe seu <strong>Checklist de Diagnóstico Gratuito</strong> hoje.</p>
-      </div>
-      <div class="p-16">
-        <form onsubmit="handleSubmit(event)" class="space-y-8 text-left">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div class="space-y-2">
-              <label for="lead-nome" class="text-xs font-black uppercase text-slate-400 ml-2 tracking-[0.2em] text-left">Seu Nome</label>
-              <input type="text" id="lead-nome" placeholder="João Silva" required class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] outline-none focus:border-blue-500 font-bold">
-            </div>
-            <div class="space-y-2 text-left">
-              <label for="lead-whatsapp" class="text-xs font-black uppercase text-slate-400 ml-2 tracking-[0.2em]">WhatsApp</label>
-              <input type="tel" id="lead-whatsapp" placeholder="11 97727-8197" required class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] outline-none focus:border-blue-500 font-bold">
-            </div>
-          </div>
-          <div class="space-y-2 text-left">
-            <label for="lead-email" class="text-xs font-black uppercase text-slate-400 ml-2 tracking-[0.2em]">E-mail Corporativo</label>
-            <input type="email" id="lead-email" placeholder="nome@empresa.com" required class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] outline-none focus:border-blue-500 font-bold">
-          </div>
-          <!-- Qualificação de Lead -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div class="space-y-2 text-left">
-              <label for="lead-interesse" class="text-xs font-black uppercase text-slate-400 ml-2 tracking-[0.2em]">O que você busca?</label>
-              <select id="lead-interesse" class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] outline-none focus:border-blue-500 font-bold text-slate-700 appearance-none">
-                <option>Sistema Sob Medida</option>
-                <option>Programa LegalTech para Advocacia</option>
-                <option>Web Site &amp; Conversão</option>
-                <option>Consultoria Estratégica</option>
-              </select>
-            </div>
-            <div class="space-y-2 text-left">
-              <label for="lead-faturamento" class="text-xs font-black uppercase text-slate-400 ml-2 tracking-[0.2em]">Faturamento Médio (Opcional)</label>
-              <select id="lead-faturamento" class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-[1.5rem] outline-none focus:border-blue-500 font-bold text-slate-700 appearance-none">
-                <option>Até R$ 50k/mês</option>
-                <option>R$ 50k - R$ 200k</option>
-                <option>Acima de R$ 200k</option>
-              </select>
-            </div>
-          </div>
-          <div class="flex items-center gap-3 bg-blue-50 p-4 rounded-xl border border-blue-100">
-            <input type="checkbox" id="lead-checklist" checked class="w-5 h-5 text-blue-600 rounded">
-            <label for="lead-checklist" class="text-sm font-bold text-blue-900">Sim! Quero receber meu Checklist de Diagnóstico gratuito.</label>
-          </div>
-          <div id="feedback-container" aria-live="polite"></div>
-          <div class="space-y-4">
-            <button type="submit" class="w-full bg-orange-500 text-white font-black py-6 rounded-[1.5rem] hover:bg-orange-600 transition shadow-[0_15px_40px_rgba(249,115,22,0.4)] text-xl active:scale-95 duration-200 text-center">Quero Minha Proposta Gratuita</button>
-            <!-- Reforço de confiança sem promessa de reembolso -->
-            <div class="flex items-center justify-center gap-2 text-slate-500 font-bold text-xs md:text-sm uppercase tracking-tight text-center">
-              <i class="fa-solid fa-headset text-lg text-blue-600" aria-hidden="true"></i>
-              <span>Sem letras miúdas: você acompanha cada etapa do projeto com suporte direto pelo WhatsApp.</span>
-            </div>
-            <p class="text-center text-[10px] text-slate-400 uppercase font-black tracking-widest text-center"><i class="fa-solid fa-shield-halved mr-2" aria-hidden="true"></i> Proteção total LGPD.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-
-<!-- Footer -->
-<footer class="bg-slate-950 text-white pt-32 pb-32 md:pb-16 text-center">
-  <div class="max-w-7xl mx-auto px-4 text-center">
-    <div class="flex items-center justify-center mb-10 group">
-      <i class="fa-solid fa-layer-group text-blue-500 mr-3 text-4xl group-hover:scale-110 transition-transform" aria-hidden="true"></i>
-      <span class="font-black text-4xl uppercase text-center">SoftGestão</span>
-    </div>
-    <div class="flex justify-center space-x-12 mb-16 text-center">
-      <a href="mailto:comercial.softgestao@gmail.com" class="text-slate-500 hover:text-blue-500 transition-all transform hover:scale-125 text-center" aria-label="Enviar e-mail para SoftGestão"><i class="fa-solid fa-envelope fa-2x" aria-hidden="true"></i></a>
-      <a href="https://wa.me/5511977278197?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20SoftGest%C3%A3o%20e%20quero%20saber%20mais%20sobre%20os%20sistemas%20de%20voc%C3%AAs." target="_blank" rel="noopener" class="text-slate-500 hover:text-green-500 transition-all transform hover:scale-125 text-center" aria-label="Conversar no WhatsApp"><i class="fa-brands fa-whatsapp fa-2x" aria-hidden="true"></i></a>
-      <a href="https://www.instagram.com/soft.gestao.desenvolvimento" target="_blank" rel="noopener" class="text-slate-500 hover:text-pink-600 transition-all transform hover:scale-125 text-center" aria-label="Seguir no Instagram"><i class="fa-brands fa-instagram fa-2x" aria-hidden="true"></i></a>
-    </div>
-    <p class="font-bold text-slate-600 text-center">© 2025 SoftGestão. Todos os direitos reservados.</p>
-  </div>
-</footer>
-
-<!-- Barra Fixa Mobile -->
-<div class="md:hidden fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-lg border-t border-slate-100 z-100 px-4 py-3 flex gap-4 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
-  <a href="https://wa.me/5511977278197?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20SoftGest%C3%A3o%20e%20quero%20saber%20mais%20sobre%20os%20sistemas%20de%20voc%C3%AAs." class="flex-1 bg-green-500 text-white font-black py-4 rounded-2xl flex items-center justify-center gap-2" aria-label="Conversar no WhatsApp"><i class="fa-brands fa-whatsapp fa-xl" aria-hidden="true"></i> WHATSAPP</a>
-  <a href="#contato" class="flex-1 bg-blue-600 text-white font-black py-4 rounded-2xl text-center">Quero Proposta</a>
-</div>
-
-<!-- Botão WhatsApp Desktop -->
-<a href="https://wa.me/5511977278197?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20SoftGest%C3%A3o%20e%20quero%20saber%20mais%20sobre%20os%20sistemas%20de%20voc%C3%AAs." target="_blank" rel="noopener" class="hidden md:flex fixed bottom-10 right-10 bg-green-500 text-white p-6 rounded-[2rem] shadow-2xl hover:bg-green-600 transition-all z-50 items-center justify-center w-20 h-20 whatsapp-btn group text-center" aria-label="Fale com um especialista pelo WhatsApp">
-  <i class="fa-brands fa-whatsapp fa-3x group-hover:scale-110 transition-transform" aria-hidden="true"></i>
-  <span class="absolute right-full mr-4 bg-white text-slate-900 px-4 py-2 rounded-xl text-xs font-black shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">Fale com um Especialista</span>
-</a>
-
-<!-- Pop-up de Intenção de Saída -->
-<div id="exit-popup" class="fixed inset-0 z-100 items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="exit-popup-title">
-  <div class="bg-white max-w-lg w-full rounded-[3rem] p-12 text-center relative">
-    <button onclick="closeExitPopup()" class="absolute top-6 right-6 text-slate-300 hover:text-slate-900 text-center" aria-label="Fechar aviso"><i class="fa-solid fa-xmark fa-2x" aria-hidden="true"></i></button>
-    <div class="bg-orange-100 text-orange-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 text-center" aria-hidden="true"><i class="fa-solid fa-gift text-3xl"></i></div>
-    <h3 id="exit-popup-title" class="text-3xl font-black text-slate-900 mb-4 text-center">Aguarde! Oportunidade Única.</h3>
-    <p class="text-slate-500 mb-10 font-medium text-center">Garantindo sua consultoria agora, você mantém sua vaga na <strong>agenda prioritária deste mês</strong> mesmo se as vagas acabarem.</p>
-    <a href="#contato" onclick="closeExitPopup()" class="block w-full bg-blue-600 text-white font-black py-5 rounded-2xl hover:bg-blue-700 transition shadow-xl text-center">Manter Minha Vaga</a>
-  </div>
-</div>
-
-<script>
-function toggleMenu() {
-  const menu = document.getElementById('mobile-menu');
-  const btn = document.querySelector('[aria-controls="mobile-menu"]');
-  menu.classList.toggle('hidden');
-  if (btn) btn.setAttribute('aria-expanded', menu.classList.contains('hidden') ? 'false' : 'true');
-}
-function toggleFaq(el) { el.classList.toggle('active'); }
-
-// Cronômetro
-function updateTimer() {
-  const now = new Date();
-  const end = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
-  const diff = end - now;
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const mins = Math.floor((diff / (1000 * 60)) % 60);
-  const secs = Math.floor((diff / 1000) % 60);
-  document.getElementById('promo-timer').innerText = `Expira em ${days}d ${hours}h ${mins}m ${secs}s`;
-}
-setInterval(updateTimer, 1000);
-updateTimer();
-
-// Filtro de Soluções
-function filterSolucoes(cat) {
-  const cards = document.querySelectorAll('.solucao-card');
-  const btns = document.querySelectorAll('.filter-btn');
-  btns.forEach(b => b.classList.remove('active'));
-  if (event) event.target.classList.add('active');
-  cards.forEach(c => {
-    if (cat === 'todos' || c.getAttribute('data-cat') === cat) { c.style.display = 'block'; }
-    else { c.style.display = 'none'; }
-  });
-}
-
-// Prova Social
-const leads = [
-  { name: 'João, de São Paulo/SP', time: 'acabou de solicitar consultoria' },
-  { name: 'Mariana, de Curitiba/PR', time: 'solicitou checklist de gestão' },
-  { name: 'Carlos, de Salvador/BA', time: 'agendou diagnóstico gratuito hoje' }
-];
-let leadIndex = 0;
-function showSocialProof() {
-  const sp = document.getElementById('social-proof');
-  const spText = document.getElementById('sp-text');
-  const spTime = document.getElementById('sp-time');
-  if (!sp || !spText || !spTime) return;
-  spText.innerText = leads[leadIndex].name;
-  spTime.innerText = leads[leadIndex].time;
-  sp.classList.remove('hidden');
-  setTimeout(() => { sp.style.opacity = 1; sp.style.transform = 'translateY(0)'; }, 100);
-  setTimeout(() => { sp.style.opacity = 0; sp.style.transform = 'translateY(10px)'; }, 5000);
-  leadIndex = (leadIndex + 1) % leads.length;
-}
-setInterval(showSocialProof, 15000);
-
-// Calculadora de ROI
-function calculateROI() {
-  const h = document.getElementById('roi-hours').value;
-  const c = document.getElementById('roi-cost').value;
-  const value = h * c * 12 * 0.4;
-  document.getElementById('roi-value').innerText = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  document.getElementById('roi-result').classList.remove('hidden');
-}
-
-// Intenção de Saída
-let popupShown = false;
-document.addEventListener('mouseout', (e) => {
-  if (!popupShown && e.clientY < 0) {
-    document.getElementById('exit-popup').style.display = 'flex';
-    popupShown = true;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "SoftGestão",
+    "description": "Desenvolvimento de sistemas sob medida, sites de alta conversão e programas LegalTech para escritórios de advocacia.",
+    "telephone": "+5511977278197",
+    "email": "comercial.softgestao@gmail.com",
+    "areaServed": "BR",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "sameAs": ["https://www.instagram.com/soft.gestao.desenvolvimento"],
+    "makesOffer": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Programas LegalTech para Escritórios de Advocacia"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Criação de Sites de Alta Conversão"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistemas de Gestão Sob Medida"}}
+    ]
   }
-});
-function closeExitPopup() { document.getElementById('exit-popup').style.display = 'none'; }
+  </script>
 
-function handleSubmit(event) {
-  event.preventDefault();
-  const btn = event.target.querySelector('button');
-  const feedback = document.getElementById('feedback-container');
-  const originalText = btn.innerText;
-  btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin mr-3 text-center" aria-hidden="true"></i> ENVIANDO...';
-  btn.disabled = true;
-  setTimeout(() => {
-    feedback.innerHTML = '<div class="bg-green-600 text-white p-6 rounded-2xl mb-6 shadow-2xl flex items-center gap-4 animate-bounce text-left"><i class="fa-solid fa-circle-check text-2xl text-left" aria-hidden="true"></i><span class="font-black text-left">RECEBEMOS! Seu Checklist de Diagnóstico está a caminho. Entraremos em contato em instantes.</span></div>';
-    event.target.reset();
-    btn.innerText = 'ENVIADO COM SUCESSO';
-    btn.classList.replace('bg-orange-500', 'bg-green-600');
-    setTimeout(() => {
-      feedback.innerHTML = '';
-      btn.innerText = originalText;
-      btn.disabled = false;
-      btn.classList.replace('bg-green-600', 'bg-orange-500');
-    }, 6000);
-  }, 2000);
-}
-</script>
+  <style>
+    .hero-bg {
+      background: linear-gradient(rgba(10,20,50,.86),rgba(30,58,138,.82)),url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
+    html { scroll-behavior: smooth; }
+    @keyframes pulse-custom {
+      0% { box-shadow: 0 0 0 0 rgba(34,197,94,.7); }
+      70% { box-shadow: 0 0 0 15px rgba(34,197,94,0); }
+      100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
+    }
+    @keyframes flash-promo {
+      0%,100% { background-color:#1d4ed8; }
+      50% { background-color:#1e40af; }
+    }
+    @keyframes slide-in-up {
+      from { transform:translateY(100%); opacity:0; }
+      to { transform:translateY(0); opacity:1; }
+    }
+    .animate-flash { animation:flash-promo 2s infinite ease-in-out; }
+    .whatsapp-btn { animation:pulse-custom 2s infinite; }
+    .card-hover { transition:all .4s cubic-bezier(.175,.885,.32,1.275); }
+    .card-hover:hover { transform:translateY(-10px); box-shadow:0 25px 50px -12px rgba(0,0,0,.15); }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height .3s ease-out; }
+    .faq-item.active .faq-answer { max-height:300px; padding-top:1rem; }
+    .faq-item.active .faq-icon { transform:rotate(180deg); }
+    #exit-popup { display:none; }
+    .filter-btn.active { background-color:#2563eb; color:#fff; border-color:#2563eb; }
+    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #f97316; outline-offset:2px; }
+  </style>
+</head>
+
+<body class="font-sans text-gray-800 antialiased bg-slate-50">
+  <div class="animate-flash text-white text-center py-2.5 px-4 text-xs md:text-sm font-black uppercase tracking-widest sticky top-0 z-60 shadow-lg flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4" role="status">
+    <span><i class="fa-solid fa-gift mr-2 animate-bounce" aria-hidden="true"></i>Oferta Especial: ao contratar seu sistema este mês, você garante consultoria estratégica e checklist personalizado sem custo.</span>
+    <div class="bg-white/20 px-3 py-1 rounded-lg border border-white/30 font-mono text-sm" id="promo-timer">Expira em 00:00:00:00</div>
+  </div>
+
+  <div id="social-proof" class="fixed bottom-24 left-6 z-100 hidden md:flex bg-white p-4 rounded-2xl shadow-2xl border border-slate-100 items-center gap-4 max-w-xs transition-all duration-500 opacity-0 transform translate-y-10" role="status" aria-live="polite">
+    <div class="bg-blue-100 p-3 rounded-full text-blue-600"><i class="fa-solid fa-check" aria-hidden="true"></i></div>
+    <div class="text-xs"><p class="font-black text-slate-900" id="sp-text">Novo lead gerado!</p><p class="text-slate-500" id="sp-time">há 2 minutos em São Paulo/SP</p></div>
+  </div>
+
+  <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all duration-300 top-0" aria-label="Navegação principal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <a href="#inicio" class="flex-shrink-0 flex items-center group" aria-label="SoftGestão - início">
+          <span class="bg-blue-600 group-hover:bg-blue-700 text-white p-2 rounded-xl mr-3 transition-colors shadow-lg shadow-blue-200"><i class="fa-solid fa-layer-group fa-lg" aria-hidden="true"></i></span>
+          <span class="font-black text-2xl text-blue-900 tracking-tighter uppercase">SoftGestão</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-10">
+          <a href="#inicio" class="text-slate-600 hover:text-blue-600 font-semibold transition">Início</a>
+          <a href="#solucoes" class="text-slate-600 hover:text-blue-600 font-semibold transition">Soluções</a>
+          <a href="#personalizado" class="text-blue-600 hover:text-blue-800 font-bold transition">Sob Medida</a>
+          <a href="#contato" class="bg-blue-600 text-white px-7 py-3 rounded-full font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">Quero Minha Proposta</a>
+        </div>
+        <button onclick="toggleMenu()" class="md:hidden text-blue-900 focus:outline-none" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu"><i class="fa-solid fa-bars-staggered fa-2x" aria-hidden="true"></i></button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 text-center">
+      <a href="#inicio" onclick="toggleMenu()" class="block py-4 px-6 font-semibold border-b">Início</a>
+      <a href="#solucoes" onclick="toggleMenu()" class="block py-4 px-6 font-semibold border-b">Soluções</a>
+      <a href="#personalizado" onclick="toggleMenu()" class="block py-4 px-6 font-bold text-blue-600 border-b">Sob Medida</a>
+      <a href="#contato" onclick="toggleMenu()" class="block py-4 px-6 font-bold text-blue-600">Quero Minha Proposta</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center pt-32 px-4 text-center">
+      <div class="max-w-5xl mx-auto">
+        <div class="inline-block bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 text-blue-300 px-4 py-1.5 rounded-full text-sm font-bold mb-8 animate-pulse uppercase tracking-widest">Vagas limitadas para projetos este mês</div>
+        <h1 class="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tight">Sistemas que Transformam <br><span class="text-blue-400">Tempo em Lucro.</span><br><span class="block text-2xl md:text-4xl mt-4 opacity-90 font-bold text-slate-100">Reduza em até <span class="text-orange-400">40% seus custos</span><br>com Automação Inteligente.</span></h1>
+        <p class="text-lg md:text-2xl text-slate-200 mb-12 max-w-3xl mx-auto leading-relaxed font-medium">Do software de gestão inteligente ao site que vende sozinho. Criamos a infraestrutura digital que coloca sua empresa à frente da concorrência — inclusive soluções LegalTech desenvolvidas especialmente para escritórios de advocacia.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a href="#contato" class="bg-orange-500 hover:bg-orange-600 text-white font-black py-5 px-12 rounded-2xl text-xl transition shadow-2xl hover:scale-105 shadow-orange-500/40">Quero Minha Consultoria Gratuita</a>
+          <a href="#solucoes" class="bg-white/10 backdrop-blur-md border-2 border-white/40 hover:bg-white hover:text-blue-900 text-white font-bold py-5 px-12 rounded-2xl text-xl transition">Ver Soluções</a>
+        </div>
+        <p class="text-slate-400 mt-6 text-sm font-semibold italic">Resposta garantida em menos de 24 horas. Sem compromisso.</p>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 border-b border-slate-100" aria-label="Números e confiança">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center mb-16">
+          <div><p class="text-5xl font-black text-blue-600 tracking-tighter">+150</p><p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Projetos Ativos</p></div>
+          <div><p class="text-5xl font-black text-blue-600 tracking-tighter">100%</p><p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Código Próprio</p></div>
+          <div><p class="text-5xl font-black text-blue-600 tracking-tighter">+12k</p><p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Horas Economizadas</p></div>
+          <div><p class="text-5xl font-black text-blue-600 tracking-tighter">72h</p><p class="text-slate-500 font-bold uppercase text-xs tracking-widest">Setup Inicial</p></div>
+        </div>
+        <div class="pt-8 border-t border-slate-50 text-center">
+          <p class="text-slate-400 text-xs font-black uppercase tracking-[0.3em] mb-8">Tecnologias de Classe Mundial</p>
+          <div class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale" aria-hidden="true"><i class="fa-brands fa-aws fa-3x"></i><i class="fa-brands fa-google fa-3x"></i><i class="fa-brands fa-node-js fa-3x"></i><i class="fa-brands fa-react fa-3x"></i><i class="fa-brands fa-docker fa-3x"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucoes" class="py-28 bg-slate-50 text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl md:text-6xl font-black text-blue-900 mb-6 tracking-tight">Soluções que Escalam Negócios</h2>
+        <div class="w-24 h-2 bg-blue-600 mx-auto rounded-full mb-8"></div>
+        <div class="flex flex-wrap justify-center gap-4 mt-12 mb-16" role="group" aria-label="Filtrar soluções">
+          <button onclick="filterSolucoes('todos', this)" class="filter-btn active px-6 py-2 rounded-full border-2 border-slate-200 font-bold">Todos</button>
+          <button onclick="filterSolucoes('gestao', this)" class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 font-bold">Gestão Empresarial</button>
+          <button onclick="filterSolucoes('legaltech', this)" class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 font-bold">LegalTech</button>
+          <button onclick="filterSolucoes('vendas', this)" class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 font-bold">Vendas &amp; Sites</button>
+          <button onclick="filterSolucoes('bem-estar', this)" class="filter-btn px-6 py-2 rounded-full border-2 border-slate-200 font-bold">Saúde &amp; Bem-Estar</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="solucoes-grid">
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover relative group text-left" data-cat="vendas">
+            <span class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-black px-4 py-1 rounded-bl-2xl uppercase">Foco em Vendas</span>
+            <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-globe fa-2x" aria-hidden="true"></i></div>
+            <h3 class="text-xl font-bold mb-3 text-blue-900">Criação de Web Sites</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">Landing pages de alta conversão e lojas online otimizadas.</p>
+            <a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero meu site <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <!-- ÚNICA solução jurídica do site -->
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border-2 border-blue-500 card-hover relative group text-left" data-cat="legaltech">
+            <span class="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-black px-4 py-1 rounded-bl-2xl uppercase">Novo</span>
+            <div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-gavel fa-2x" aria-hidden="true"></i></div>
+            <h3 class="text-xl font-bold mb-3 text-blue-900">Programas LegalTech</h3>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">Sistemas sob medida para escritórios de advocacia: análise de processos com IA, automação de peças, controle de prazos, agenda jurídica e gestão inteligente do escritório.</p>
+            <a href="https://wa.me/5511977278197?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20tenho%20interesse%20no%20programa%20LegalTech%20para%20escrit%C3%B3rios%20de%20advocacia.%20Pode%20me%20passar%20mais%20detalhes%3F" target="_blank" rel="noopener" class="text-blue-600 font-black text-sm uppercase">Quero conhecer a solução jurídica <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </article>
+
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao"><div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-building fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-blue-900">Gestão de Condomínios</h3><p class="text-slate-600 text-sm leading-relaxed mb-6">Controle financeiro automatizado e comunicação digital ativa.</p><a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero modernizar meu condomínio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao"><div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-car fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-blue-900">Stands de Automóveis</h3><p class="text-slate-600 text-sm leading-relaxed mb-6">Gestão de estoque inteligente e CRM de vendas integrado.</p><a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero gerir meu estoque <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao"><div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-square-parking fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-blue-900">Estacionamentos</h3><p class="text-slate-600 text-sm leading-relaxed mb-6">Controle de entradas/saídas por placa e tarifação dinâmica.</p><a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero otimizar meu estacionamento <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao"><div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-soap fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-blue-900">Lava Rápido</h3><p class="text-slate-600 text-sm leading-relaxed mb-6">Fila de lavagem em tempo real e comissões automáticas.</p><a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero gerir meu lava jato <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="vendas"><div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-house-chimney fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-blue-900">Imobiliárias</h3><p class="text-slate-600 text-sm leading-relaxed mb-6">Catálogo digital de alta performance e gestão de contratos.</p><a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero listar meus imóveis <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="bem-estar"><div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-user-doctor fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-blue-900">Saúde e Clínicas</h3><p class="text-slate-600 text-sm leading-relaxed mb-6">Prontuário eletrônico seguro e agendamento online.</p><a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero cuidar da minha clínica <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="bem-estar"><div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-spa fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-blue-900">Salões e Estética</h3><p class="text-slate-600 text-sm leading-relaxed mb-6">Agendamentos via WhatsApp e controle de comissões.</p><a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero organizar meu studio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="bem-estar"><div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-paw fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-blue-900">Pet Shops</h3><p class="text-slate-600 text-sm leading-relaxed mb-6">Histórico clínico animal e agendamento de banho/tosa.</p><a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero gerir meu pet shop <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="solucao-card bg-white p-8 rounded-3xl shadow-sm border border-slate-200/60 card-hover group text-left" data-cat="gestao"><div class="text-blue-600 mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-utensils fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-blue-900">Alimentação</h3><p class="text-slate-600 text-sm leading-relaxed mb-6">Controle de mesas, PDV ágil e delivery integrado.</p><a href="#contato" class="text-blue-600 font-black text-sm uppercase">Quero gerir meu restaurante <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+          <article class="solucao-card bg-blue-600 p-8 rounded-3xl shadow-xl border border-blue-400 card-hover group text-left" data-cat="gestao"><div class="text-white mb-6 bg-blue-500 w-16 h-16 flex items-center justify-center rounded-2xl"><i class="fa-solid fa-house-user fa-2x" aria-hidden="true"></i></div><h3 class="text-xl font-bold mb-3 text-white">Controle Pessoal</h3><p class="text-blue-100 text-sm leading-relaxed mb-6">Gestão de gastos familiares e planejamento doméstico.</p><a href="#contato" class="text-white font-black text-sm uppercase">Quero controlar meus gastos <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="personalizado" class="py-28 bg-blue-900 text-white text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <span class="bg-blue-600 text-white text-xs font-black px-5 py-2 rounded-full uppercase tracking-widest">Metodologia Ágil</span>
+        <h2 class="text-4xl md:text-6xl font-black mt-8 mb-6">Software de Verdade,<br>Sem Complicação.</h2>
+        <p class="text-blue-200 text-xl max-w-2xl mx-auto leading-relaxed">Desenvolvemos o sistema que sua empresa realmente precisa, sem taxas escondidas.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 text-left">
+          <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/10"><div class="bg-white text-blue-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-3xl font-black">1</div><h3 class="text-2xl font-bold mb-4">Análise Estratégica</h3><p class="text-blue-100/70 leading-relaxed">Mapeamos seus gargalos operacionais para eliminá-los.</p></div>
+          <div class="bg-white/5 p-10 rounded-[2.5rem] border border-white/10"><div class="bg-white text-blue-900 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-3xl font-black">2</div><h3 class="text-2xl font-bold mb-4">Arquitetura UI/UX</h3><p class="text-blue-100/70 leading-relaxed">Interfaces intuitivas que não exigem manuais complexos.</p></div>
+          <div class="bg-blue-600 p-10 rounded-[2.5rem] border border-blue-400"><div class="bg-white text-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mb-8 text-3xl font-black">3</div><h3 class="text-2xl font-bold mb-4">Deploy em Dias</h3><p class="text-white leading-relaxed font-bold">Lançamento agilizado para colher resultados imediatamente.</p></div>
+        </div>
+        <a href="#contato" class="inline-block bg-white text-blue-900 font-black py-6 px-16 rounded-3xl mt-20 text-xl">Quero Meu Sistema Exclusivo Agora</a>
+      </div>
+    </section>
+
+    <section class="py-28 bg-white text-center">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-4xl font-black text-slate-900 mb-6">Quanto você está perdendo hoje?</h2>
+        <p class="text-slate-500 mb-12 text-lg">Calcule quanto tempo e dinheiro sua empresa economizaria com automação.</p>
+        <div class="bg-slate-50 p-10 rounded-[2.5rem] border-2 border-dashed border-slate-200">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 text-left">
+            <div><label for="roi-hours" class="block text-xs font-black uppercase text-slate-400 mb-3">Horas gastas em tarefas manuais por mês</label><input type="number" id="roi-hours" value="40" class="w-full px-6 py-4 rounded-xl border-2 border-slate-100 font-bold"></div>
+            <div><label for="roi-cost" class="block text-xs font-black uppercase text-slate-400 mb-3">Custo médio da hora de trabalho (R$)</label><input type="number" id="roi-cost" value="50" class="w-full px-6 py-4 rounded-xl border-2 border-slate-100 font-bold"></div>
+          </div>
+          <button onclick="calculateROI()" class="bg-blue-600 text-white font-black py-4 px-10 rounded-xl hover:bg-blue-700 mb-10">Calcular Minha Economia</button>
+          <div id="roi-result" class="hidden" aria-live="polite"><p class="text-slate-500 font-bold uppercase text-xs mb-2">Economia estimada por ano:</p><p class="text-5xl font-black text-green-600 mb-8" id="roi-value">R$ 0,00</p><a href="#contato" class="bg-orange-500 text-white font-black py-4 px-8 rounded-xl">Quero Economizar Este Valor</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="py-28 bg-slate-50 text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="w-full max-w-4xl mx-auto relative">
+          <div class="relative rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-200 bg-white">
+            <div class="bg-slate-100 px-8 py-5 flex items-center gap-5"><div class="flex gap-2" aria-hidden="true"><span class="w-3.5 h-3.5 rounded-full bg-red-400"></span><span class="w-3.5 h-3.5 rounded-full bg-yellow-400"></span><span class="w-3.5 h-3.5 rounded-full bg-green-400"></span></div><div class="flex-1 bg-white rounded-xl border py-2 px-5 text-[11px] text-slate-400 font-mono text-left">softgestao.com.br/painel-administrativo</div></div>
+            <div class="min-h-[350px] md:min-h-[450px]"><img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=2070&auto=format&fit=crop" alt="Painel administrativo da SoftGestão em um notebook" width="2070" height="1380" loading="lazy" decoding="async" class="w-full h-full object-cover"></div>
+          </div>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-black text-slate-900 mt-20 mb-8">Presença Digital<br>que <span class="text-blue-600">Converte</span></h2>
+        <p class="text-xl text-slate-600 mb-16">Unimos a inteligência do código à psicologia do design para criar máquinas de vendas automáticas.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left"><div><i class="fa-solid fa-bolt-lightning text-2xl bg-blue-600 text-white p-5 rounded-2xl"></i><h3 class="text-xl font-bold mt-6">Velocidade Crítica</h3><p class="text-slate-500 mt-2">Sites otimizados abaixo de 1 segundo.</p></div><div><i class="fa-solid fa-chart-line text-2xl bg-green-600 text-white p-5 rounded-2xl"></i><h3 class="text-xl font-bold mt-6">SEO Dominante</h3><p class="text-slate-500 mt-2">Apareça nas primeiras posições do Google.</p></div><div><i class="fa-solid fa-shield-halved text-2xl bg-slate-900 text-white p-5 rounded-2xl"></i><h3 class="text-xl font-bold mt-6">Segurança</h3><p class="text-slate-500 mt-2">Proteção total para seus dados e transações.</p></div></div>
+      </div>
+    </section>
+
+    <section class="py-28 bg-white border-y border-slate-200/60"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h2 class="text-4xl font-black text-slate-900 text-center mb-20">O que dizem sobre nós</h2><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"><blockquote class="bg-slate-50 p-10 rounded-[2.5rem] shadow-sm"><p class="text-slate-600 italic mb-8">“O sistema para meu Pet Shop mudou tudo. Hoje controlo estoque e banhos de forma 100% digital.”</p><footer class="font-black">Ricardo Mendes<br><span class="text-slate-500 text-xs uppercase">Pet Shop</span></footer></blockquote><blockquote class="bg-white p-10 rounded-[2.5rem] shadow-xl border-2 border-blue-500"><p class="text-slate-700 italic mb-8">“Precisava de um site imobiliário que fosse rápido. Em 5 dias estava no ar e os contatos dobraram.”</p><footer class="font-black">Ana Lúcia<br><span class="text-slate-500 text-xs uppercase">Corretora</span></footer></blockquote><blockquote class="bg-slate-50 p-10 rounded-[2.5rem] shadow-sm"><p class="text-slate-600 italic mb-8">“O sistema jurídico automatizou meus prazos. O financeiro é impecável.”</p><footer class="font-black">Dr. André Silva<br><span class="text-slate-500 text-xs uppercase">Advogado</span></footer></blockquote></div></div></section>
+
+    <section class="py-28 bg-white"><div class="max-w-4xl mx-auto px-4"><h2 class="text-4xl font-black text-slate-900 text-center mb-16">Tira-Dúvidas</h2><div class="space-y-6">
+      <div class="faq-item border rounded-3xl p-8 cursor-pointer" onclick="toggleFaq(this)"><div class="flex justify-between items-center"><h3 class="text-lg font-black">Quanto tempo demora?</h3><i class="faq-icon fa-solid fa-chevron-down text-blue-600" aria-hidden="true"></i></div><div class="faq-answer text-slate-600">Sites em 3-7 dias. Sistemas variam, mas entregamos módulos iniciais rapidamente.</div></div>
+      <div class="faq-item border rounded-3xl p-8 cursor-pointer" onclick="toggleFaq(this)"><div class="flex justify-between items-center"><h3 class="text-lg font-black">O software será meu?</h3><i class="faq-icon fa-solid fa-chevron-down text-blue-600" aria-hidden="true"></i></div><div class="faq-answer text-slate-600">Sim! O código pertence ao cliente após a conclusão, sem aluguel.</div></div>
+      <div class="faq-item border rounded-3xl p-8 cursor-pointer" onclick="toggleFaq(this)"><div class="flex justify-between items-center"><h3 class="text-lg font-black">Integra com WhatsApp?</h3><i class="faq-icon fa-solid fa-chevron-down text-blue-600" aria-hidden="true"></i></div><div class="faq-answer text-slate-600">Sim. Integramos via API com WhatsApp, pagamentos e outros ERPs.</div></div>
+      <div class="faq-item border rounded-3xl p-8 cursor-pointer" onclick="toggleFaq(this)"><div class="flex justify-between items-center"><h3 class="text-lg font-black">Vocês desenvolvem soluções para escritórios de advocacia?</h3><i class="faq-icon fa-solid fa-chevron-down text-blue-600" aria-hidden="true"></i></div><div class="faq-answer text-slate-600">Sim. Criamos programas LegalTech sob medida para escritórios de advocacia, com recursos de análise jurídica assistida por IA, automação de documentos, controle de processos, prazos e agenda.</div></div>
+      <div class="faq-item border rounded-3xl p-8 cursor-pointer" onclick="toggleFaq(this)"><div class="flex justify-between items-center"><h3 class="text-lg font-black">Hospedagem inclusa?</h3><i class="faq-icon fa-solid fa-chevron-down text-blue-600" aria-hidden="true"></i></div><div class="faq-answer text-slate-600">Cuidamos da infraestrutura inicial e oferecemos suporte para nuvem AWS/Google.</div></div>
+    </div></div></section>
+
+    <section id="contato" class="py-28 bg-slate-900"><div class="max-w-4xl mx-auto px-4"><div class="bg-white rounded-[3rem] overflow-hidden shadow-2xl"><div class="bg-blue-600 p-16 text-white text-center"><h2 class="text-4xl md:text-5xl font-black mb-6">Inicie Sua Nova Fase Digital</h2><p class="text-blue-100 text-xl">Receba seu <strong>Checklist de Diagnóstico Gratuito</strong>.</p></div><div class="p-10 md:p-16"><form onsubmit="handleSubmit(event)" class="space-y-8"><div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div><label for="nome" class="block text-xs font-black uppercase text-slate-400 mb-2">Seu Nome</label><input id="nome" type="text" placeholder="João Silva" required class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-2xl font-bold"></div><div><label for="whatsapp" class="block text-xs font-black uppercase text-slate-400 mb-2">WhatsApp</label><input id="whatsapp" type="tel" placeholder="11 97727-8197" required class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-2xl font-bold"></div></div><div><label for="email" class="block text-xs font-black uppercase text-slate-400 mb-2">E-mail Corporativo</label><input id="email" type="email" placeholder="nome@empresa.com" required class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-2xl font-bold"></div><div class="grid grid-cols-1 md:grid-cols-2 gap-8"><div><label for="interesse" class="block text-xs font-black uppercase text-slate-400 mb-2">O que você busca?</label><select id="interesse" class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-2xl font-bold"><option>Sistema Sob Medida</option><option>Programa LegalTech para Advocacia</option><option>Web Site &amp; Conversão</option><option>Consultoria Estratégica</option></select></div><div><label for="faturamento" class="block text-xs font-black uppercase text-slate-400 mb-2">Faturamento Médio (Opcional)</label><select id="faturamento" class="w-full px-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-2xl font-bold"><option>Até R$ 50k/mês</option><option>R$ 50k - R$ 200k</option><option>Acima de R$ 200k</option></select></div></div><label class="flex items-center gap-3 bg-blue-50 p-4 rounded-xl"><input type="checkbox" checked><span class="text-sm font-bold text-blue-900">Sim! Quero receber meu Checklist de Diagnóstico gratuito.</span></label><div id="feedback-container" aria-live="polite"></div><button type="submit" class="w-full bg-orange-500 text-white font-black py-6 rounded-2xl text-xl hover:bg-orange-600">Quero Minha Proposta Gratuita</button><p class="text-center text-slate-500 text-xs font-bold">Você acompanha cada etapa do projeto com suporte direto pelo WhatsApp. Proteção total LGPD.</p></form></div></div></div></section>
+  </main>
+
+  <footer class="bg-slate-950 text-white py-20 text-center"><div class="max-w-7xl mx-auto px-4"><div class="font-black text-4xl uppercase mb-10">SoftGestão</div><div class="flex justify-center gap-12 mb-12"><a href="mailto:comercial.softgestao@gmail.com" aria-label="Enviar e-mail"><i class="fa-solid fa-envelope fa-2x" aria-hidden="true"></i></a><a href="https://wa.me/5511977278197?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20SoftGest%C3%A3o%20e%20quero%20saber%20mais%20sobre%20os%20sistemas%20de%20voc%C3%AAs." target="_blank" rel="noopener" aria-label="Conversar no WhatsApp"><i class="fa-brands fa-whatsapp fa-2x" aria-hidden="true"></i></a><a href="https://www.instagram.com/soft.gestao.desenvolvimento" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram fa-2x" aria-hidden="true"></i></a></div><p class="text-slate-500">© 2025 SoftGestão. Todos os direitos reservados.</p></div></footer>
+
+  <div class="md:hidden fixed bottom-0 left-0 w-full bg-white/95 border-t z-100 px-4 py-3 flex gap-4"><a href="https://wa.me/5511977278197?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20SoftGest%C3%A3o%20e%20quero%20saber%20mais%20sobre%20os%20sistemas%20de%20voc%C3%AAs." class="flex-1 bg-green-500 text-white font-black py-4 rounded-2xl text-center">WHATSAPP</a><a href="#contato" class="flex-1 bg-blue-600 text-white font-black py-4 rounded-2xl text-center">Quero Proposta</a></div>
+  <a href="https://wa.me/5511977278197?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20SoftGest%C3%A3o%20e%20quero%20saber%20mais%20sobre%20os%20sistemas%20de%20voc%C3%AAs." target="_blank" rel="noopener" class="hidden md:flex fixed bottom-10 right-10 bg-green-500 text-white p-6 rounded-[2rem] shadow-2xl z-50 items-center justify-center w-20 h-20 whatsapp-btn" aria-label="Fale com um especialista pelo WhatsApp"><i class="fa-brands fa-whatsapp fa-3x" aria-hidden="true"></i></a>
+
+  <script>
+    function toggleMenu(){const menu=document.getElementById('mobile-menu');const btn=document.querySelector('[aria-controls="mobile-menu"]');menu.classList.toggle('hidden');if(btn)btn.setAttribute('aria-expanded',String(!menu.classList.contains('hidden')))}
+    function toggleFaq(el){el.classList.toggle('active')}
+    function updateTimer(){const now=new Date(),end=new Date(now.getFullYear(),now.getMonth()+1,0,23,59,59),diff=end-now;const d=Math.floor(diff/86400000),h=Math.floor(diff/3600000%24),m=Math.floor(diff/60000%60),s=Math.floor(diff/1000%60);document.getElementById('promo-timer').innerText=`Expira em ${d}d ${h}h ${m}m ${s}s`}
+    setInterval(updateTimer,1000);updateTimer();
+    function filterSolucoes(cat,btn){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.solucao-card').forEach(card=>{card.style.display=cat==='todos'||card.dataset.cat===cat?'block':'none'})}
+    const leads=[{name:'João, de São Paulo/SP',time:'acabou de solicitar consultoria'},{name:'Mariana, de Curitiba/PR',time:'solicitou checklist de gestão'},{name:'Carlos, de Salvador/BA',time:'agendou diagnóstico gratuito hoje'}];let leadIndex=0;
+    function showSocialProof(){const sp=document.getElementById('social-proof');document.getElementById('sp-text').innerText=leads[leadIndex].name;document.getElementById('sp-time').innerText=leads[leadIndex].time;sp.classList.remove('hidden');setTimeout(()=>{sp.style.opacity=1;sp.style.transform='translateY(0)'},100);setTimeout(()=>{sp.style.opacity=0;sp.style.transform='translateY(10px)'},5000);leadIndex=(leadIndex+1)%leads.length)}
+    setInterval(showSocialProof,15000);
+    function calculateROI(){const value=document.getElementById('roi-hours').value*document.getElementById('roi-cost').value*12*.4;document.getElementById('roi-value').innerText=value.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});document.getElementById('roi-result').classList.remove('hidden')}
+    function handleSubmit(event){event.preventDefault();const btn=event.target.querySelector('button'),feedback=document.getElementById('feedback-container'),original=btn.innerText;btn.disabled=true;btn.innerText='ENVIANDO...';setTimeout(()=>{feedback.innerHTML='<div class="bg-green-600 text-white p-6 rounded-2xl mb-6 font-bold">Recebemos seus dados! Seu Checklist de Diagnóstico será encaminhado e entraremos em contato em instantes.</div>';event.target.reset();btn.innerText='ENVIADO COM SUCESSO';setTimeout(()=>{feedback.innerHTML='';btn.innerText=original;btn.disabled=false},6000)},1500)}
+  </script>
 </body>
 </html>
