@@ -1,1 +1,68 @@
-(()=>{const b=document.querySelector('.menu-btn'),m=document.getElementById('mobile-menu');b?.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));b.setAttribute('aria-label',o?'Abrir menu':'Fechar menu');m?.classList.toggle('open',!o)});m?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{b?.setAttribute('aria-expanded','false');b?.setAttribute('aria-label','Abrir menu');m.classList.remove('open')}));document.querySelectorAll('[data-year]').forEach(y=>y.textContent=new Date().getFullYear());const els=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.1});els.forEach(e=>ob.observe(e))}else els.forEach(e=>e.classList.add('visible'));document.querySelectorAll('.contact-form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();const s=f.querySelector('.form-status');if(!f.checkValidity()){f.reportValidity();s.textContent='Confira os campos obrigatórios antes de continuar.';s.style.color='#ffbd7c';return}const d=new FormData(f),base=f.dataset.baseMessage||'Olá! Vim pelo site da SoftGestão e quero conversar sobre um projeto.';const msg=[base,'','Nome: '+d.get('nome'),'WhatsApp: '+d.get('whatsapp'),'E-mail: '+d.get('email'),'Área: '+d.get('area'),'Necessidade: '+d.get('problema')].join('\n');s.textContent='Abrindo o WhatsApp oficial da SoftGestão…';s.style.color='#77e7ae';window.open('https://wa.me/5511977278197?text='+encodeURIComponent(msg),'_blank','noopener')}));})();
+(()=>{
+  const menuButton=document.querySelector('.menu-btn');
+  const mobileMenu=document.getElementById('mobile-menu');
+
+  menuButton?.addEventListener('click',()=>{
+    const isOpen=menuButton.getAttribute('aria-expanded')==='true';
+    menuButton.setAttribute('aria-expanded',String(!isOpen));
+    menuButton.setAttribute('aria-label',isOpen?'Abrir menu':'Fechar menu');
+    mobileMenu?.classList.toggle('open',!isOpen);
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    menuButton?.setAttribute('aria-expanded','false');
+    menuButton?.setAttribute('aria-label','Abrir menu');
+    mobileMenu.classList.remove('open');
+  }));
+
+  document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
+
+  const revealElements=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting) entry.target.classList.add('visible');
+    }),{threshold:.1});
+    revealElements.forEach(el=>observer.observe(el));
+  }else{
+    revealElements.forEach(el=>el.classList.add('visible'));
+  }
+
+  document.querySelectorAll('.contact-form').forEach(form=>form.addEventListener('submit',event=>{
+    event.preventDefault();
+    const status=form.querySelector('.form-status');
+
+    if(!form.checkValidity()){
+      form.reportValidity();
+      if(status){
+        status.textContent='Confira os campos obrigatórios antes de continuar.';
+        status.style.color='#ffbd7c';
+      }
+      return;
+    }
+
+    const data=new FormData(form);
+    const base=form.dataset.baseMessage||'Olá! Vim pelo site da SoftGestão e quero conversar sobre um projeto.';
+    const message=[
+      base,
+      '',
+      'Nome: '+data.get('nome'),
+      'WhatsApp: '+data.get('whatsapp'),
+      'E-mail: '+data.get('email'),
+      'Área: '+data.get('area'),
+      'Necessidade: '+data.get('problema')
+    ].join('\n');
+    const whatsappUrl='https://wa.me/5511977278197?text='+encodeURIComponent(message);
+
+    if(status){
+      status.textContent='Abrindo o WhatsApp oficial da SoftGestão…';
+      status.style.color='#77e7ae';
+    }
+
+    const whatsappWindow=window.open(whatsappUrl,'_blank');
+    if(whatsappWindow){
+      whatsappWindow.opener=null;
+    }else{
+      window.location.href=whatsappUrl;
+    }
+  }));
+})();
