@@ -2,6 +2,29 @@
   const WHATSAPP='5511977278197';
   const menuButton=document.querySelector('.menu-btn');
   const mobileMenu=document.getElementById('mobile-menu');
+  const isHome=!document.querySelector('.solution-stage');
+  const testimonialsHref=isHome?'#depoimentos':'../../#depoimentos';
+
+  const addTestimonialsNav=()=>{
+    document.querySelectorAll('.nav-links').forEach(nav=>{
+      if(nav.querySelector('[data-testimonials-link]')) return;
+      const contact=[...nav.querySelectorAll('a')].find(a=>a.getAttribute('href')==='#contato');
+      const link=document.createElement('a');
+      link.href=testimonialsHref;
+      link.textContent='Depoimentos';
+      link.dataset.testimonialsLink='true';
+      contact?nav.insertBefore(link,contact):nav.appendChild(link);
+    });
+    if(mobileMenu && !mobileMenu.querySelector('[data-testimonials-link]')){
+      const contact=[...mobileMenu.querySelectorAll('a')].find(a=>a.getAttribute('href')==='#contato');
+      const link=document.createElement('a');
+      link.href=testimonialsHref;
+      link.textContent='Depoimentos';
+      link.dataset.testimonialsLink='true';
+      contact?mobileMenu.insertBefore(link,contact):mobileMenu.appendChild(link);
+    }
+  };
+  addTestimonialsNav();
 
   menuButton?.addEventListener('click',()=>{
     const isOpen=menuButton.getAttribute('aria-expanded')==='true';
@@ -23,6 +46,21 @@
 
   document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 
+  const injectTestimonialsStyles=()=>{
+    if(document.getElementById('testimonial-styles')) return;
+    const style=document.createElement('style');
+    style.id='testimonial-styles';
+    style.textContent=`
+      .testimonials-section{background:linear-gradient(180deg,#071a31,#041326);padding:64px 0;color:#fff;border-top:1px solid rgba(106,160,210,.14);border-bottom:1px solid rgba(106,160,210,.14)}
+      .testimonials-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:26px}.testimonials-head h2{font-size:clamp(32px,4vw,46px);letter-spacing:-1.4px;line-height:1.08;margin:8px 0 0}.testimonials-head p{max-width:560px;margin:0;color:#b7cadb}
+      .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.testimonial-card{position:relative;background:linear-gradient(145deg,rgba(15,43,74,.94),rgba(7,27,50,.96));border:1px solid rgba(117,167,211,.18);border-radius:16px;padding:23px;box-shadow:0 14px 34px rgba(0,0,0,.18);min-height:225px}.testimonial-card::before{content:'“';position:absolute;right:18px;top:7px;font:900 58px Georgia,serif;color:rgba(66,158,255,.18)}
+      .testimonial-badge{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:rgba(21,143,255,.12);border:1px solid rgba(64,161,255,.22);color:#69baff;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.05em}.testimonial-card blockquote{margin:17px 0 18px;color:#e8f1f9;font-size:15px;line-height:1.7}.testimonial-card footer{padding:0;border:0;background:transparent;color:#91a9bd;font-size:12px}.testimonial-note{margin-top:18px;color:#8fa7bb;font-size:12px}
+      @media(max-width:900px){.testimonial-grid{grid-template-columns:1fr 1fr}.testimonials-head{display:block}.testimonials-head p{margin-top:10px}}
+      @media(max-width:640px){.testimonial-grid{grid-template-columns:1fr}.testimonials-section{padding:46px 0}.testimonial-card{min-height:auto}}
+    `;
+    document.head.appendChild(style);
+  };
+
   const addPriceSignal=()=>{
     const note=document.querySelector('.solution-hero .hero-note, .hero .hero-note');
     if(!note || note.closest('.hero-meta')) return;
@@ -37,7 +75,15 @@
     if(document.querySelector('.solution-stage') || document.getElementById('experiencia')) return;
     const areas=document.querySelector('.areas');
     if(!areas) return;
-    areas.insertAdjacentHTML('afterend',`<section class="social-proof" id="experiencia"><div class="container reveal"><div class="social-proof-head"><div><span class="eyebrow">Experiência em projetos reais</span><h2>Números que ajudam a conhecer a SoftGestão.</h2></div><p>Indicadores da atuação acumulada em desenvolvimento sob medida, sem inventar depoimentos ou resultados de clientes.</p></div><div class="proof-grid"><article class="proof-card"><span class="proof-value">Desde 2020</span><h3>Desenvolvimento sob medida</h3><p>Atuação contínua criando soluções digitais alinhadas à rotina real de cada operação.</p></article><article class="proof-card"><span class="proof-value">28</span><h3>Sistemas personalizados</h3><p>Projetos desenvolvidos para necessidades específicas de empresas e usuários reais.</p></article><article class="proof-card"><span class="proof-value">≈ 50</span><h3>Clientes atendidos</h3><p>Experiência acumulada em projetos, ajustes, implantação e evolução de soluções.</p></article><article class="proof-card"><span class="proof-value">9</span><h3>Segmentos de negócio</h3><p>Experiência em jurídico, imobiliário, condominial, automotivo, varejista, pet, construção, segurança e gestão empresarial.</p></article><article class="proof-card"><span class="proof-value">Full cycle</span><h3>Do levantamento à publicação</h3><p>Requisitos, arquitetura, UX/UI, desenvolvimento, integrações, implantação e evolução em um mesmo processo.</p></article><article class="proof-card"><span class="proof-value">Projetos reais</span><h3>Soluções colocadas em uso</h3><p>Desenvolvimento orientado a problemas concretos, com sistemas feitos para operações e usuários reais.</p></article></div><p class="proof-foot">Os números representam a experiência acumulada da SoftGestão e não substituem a avaliação de escopo de cada novo projeto.</p></div></section>`);
+    areas.insertAdjacentHTML('afterend',`<section class="social-proof" id="experiencia"><div class="container reveal"><div class="social-proof-head"><div><span class="eyebrow">Experiência em projetos reais</span><h2>Experiência construída em diferentes tipos de operação.</h2></div><p>A SoftGestão atua com desenvolvimento sob medida, adaptando tecnologia ao processo real de cada negócio.</p></div><div class="proof-grid"><article class="proof-card"><span class="proof-value">Desde 2020</span><h3>Atuação contínua</h3><p>Desenvolvimento e evolução de soluções digitais para necessidades concretas de empresas e profissionais.</p></article><article class="proof-card"><span class="proof-value">Multissetorial</span><h3>Diversos segmentos</h3><p>Condomínios, estacionamentos, lava-rápidos, oficinas e automotivo, restaurantes e alimentação, lojas e varejo, clínicas, salões, studios, pet shops, imobiliárias, ensino, fitness e personal, jurídico, serviços, construção, segurança, saúde, atendimento e gestão empresarial.</p></article><article class="proof-card"><span class="proof-value">Sob medida</span><h3>Sem obrigar a empresa a caber no sistema</h3><p>Fluxos, regras, telas e integrações são pensados de acordo com a forma como a operação realmente funciona.</p></article><article class="proof-card"><span class="proof-value">Full cycle</span><h3>Do levantamento à publicação</h3><p>Requisitos, arquitetura, UX/UI, desenvolvimento, integrações, implantação, documentação, suporte e evolução.</p></article><article class="proof-card"><span class="proof-value">Integrações</span><h3>Automação conectada à rotina</h3><p>Projetos podem integrar APIs, WhatsApp, pagamentos, bancos de dados, automações e outros sistemas quando houver viabilidade técnica.</p></article><article class="proof-card"><span class="proof-value">Projetos reais</span><h3>Soluções colocadas em uso</h3><p>Desenvolvimento orientado a problemas reais, com foco em organização, produtividade, atendimento e evolução da operação.</p></article></div></div></section>`);
+  };
+
+  const addTestimonials=()=>{
+    if(!isHome || document.getElementById('depoimentos')) return;
+    const experience=document.getElementById('experiencia');
+    if(!experience) return;
+    injectTestimonialsStyles();
+    experience.insertAdjacentHTML('afterend',`<section class="testimonials-section" id="depoimentos"><div class="container reveal"><div class="testimonials-head"><div><span class="eyebrow">Depoimentos</span><h2>O que clientes podem contar sobre a experiência.</h2></div><p>A estrutura abaixo está pronta para receber depoimentos reais e autorizados. Os textos estão identificados como modelos para não serem confundidos com relatos verdadeiros de clientes.</p></div><div class="testimonial-grid"><article class="testimonial-card"><span class="testimonial-badge">Modelo — resultados</span><blockquote>Cheguei com dúvidas sobre como a tecnologia poderia se adaptar à rotina da empresa. O processo foi bem conduzido, com explicações claras e uma solução alinhada ao que precisávamos.</blockquote><footer>Substituir por depoimento real autorizado</footer></article><article class="testimonial-card"><span class="testimonial-badge">Modelo — facilidade</span><blockquote>O processo ficou muito mais simples e organizado. A solução reduziu etapas manuais e facilitou o acompanhamento das atividades no dia a dia.</blockquote><footer>Substituir por depoimento real autorizado</footer></article><article class="testimonial-card"><span class="testimonial-badge">Modelo — confiança</span><blockquote>O atendimento foi rápido, claro e transparente. As etapas do projeto foram explicadas de forma objetiva, o que trouxe segurança durante o desenvolvimento.</blockquote><footer>Substituir por depoimento real autorizado</footer></article><article class="testimonial-card"><span class="testimonial-badge">Modelo — sob medida</span><blockquote>O diferencial foi não tentar encaixar nossa empresa em um sistema pronto. A solução foi construída considerando o nosso jeito de trabalhar.</blockquote><footer>Substituir por depoimento real autorizado</footer></article><article class="testimonial-card"><span class="testimonial-badge">Modelo — evolução</span><blockquote>Começamos com uma necessidade específica e o projeto foi evoluindo por etapas. Isso facilitou a implantação e permitiu ajustar prioridades ao longo do caminho.</blockquote><footer>Substituir por depoimento real autorizado</footer></article><article class="testimonial-card"><span class="testimonial-badge">Modelo — acompanhamento</span><blockquote>O acompanhamento depois da entrega ajudou nos ajustes e na evolução da solução. Isso fez diferença na adaptação da equipe à nova rotina.</blockquote><footer>Substituir por depoimento real autorizado</footer></article></div><p class="testimonial-note">Para publicar como prova social, substitua cada modelo por uma fala real de cliente, com autorização para uso do texto e da identificação escolhida.</p></div></section>`);
   };
 
   const faqBySlug={
@@ -82,7 +128,7 @@
     if(!faqItems || document.querySelector('.trust-strip')) return;
     const stage=document.querySelector('.solution-stage');
     if(!stage) return;
-    stage.insertAdjacentHTML('afterend','<section class="trust-strip" aria-label="Experiência e investimento"><div class="container trust-grid"><div class="trust-item"><strong>Desde 2020</strong><span>Desenvolvimento sob medida</span></div><div class="trust-item"><strong>28 sistemas</strong><span>Projetos personalizados desenvolvidos</span></div><div class="trust-item"><strong>≈ 50 clientes</strong><span>Experiência em projetos reais</span></div><div class="trust-item price"><strong>A partir de R$ 1.000,00</strong><span>Valor final conforme o escopo</span></div></div></section>');
+    stage.insertAdjacentHTML('afterend','<section class="trust-strip" aria-label="Experiência e investimento"><div class="container trust-grid"><div class="trust-item"><strong>Desde 2020</strong><span>Desenvolvimento sob medida</span></div><div class="trust-item"><strong>Diversos segmentos</strong><span>Experiência multissetorial</span></div><div class="trust-item"><strong>Solução personalizada</strong><span>Projeto adaptado à operação</span></div><div class="trust-item price"><strong>A partir de R$ 1.000,00</strong><span>Valor final conforme o escopo</span></div></div></section>');
   };
 
   const updateFaqSchema=(items)=>{
@@ -113,6 +159,7 @@
 
   addPriceSignal();
   addSocialProof();
+  addTestimonials();
   addSolutionTrust();
   addFaq();
 
