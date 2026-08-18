@@ -9,6 +9,11 @@
     mobileMenu?.classList.toggle('open',!isOpen);
   });
 
+  const homeMobileWhatsapp=mobileMenu?.querySelector('a[href="https://wa.me/5511977278197"]');
+  if(homeMobileWhatsapp){
+    homeMobileWhatsapp.href='https://wa.me/5511977278197?text='+encodeURIComponent('Olá! Vim pelo site da SoftGestão e gostaria de conversar sobre uma solução sob medida.');
+  }
+
   mobileMenu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
     menuButton?.setAttribute('aria-expanded','false');
     menuButton?.setAttribute('aria-label','Abrir menu');
